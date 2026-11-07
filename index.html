@@ -1,1 +1,367 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyLifeNWK</title>
+<meta name="description" content="MyLifeNWK: aplicativos para facilitar seu dia a dia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #25272b;
+  --surface: #2f3237;
+  --line: #44474d;
+  --text: #ece8e2;
+  --muted: #b3afa8;
+  --orange: #d2692b;
+  --orange-hover: #e07a3c;
+  --orange-text: #e58a50;
+  --on-orange: #1b1c1f;
+  --display: "Bricolage Grotesque", sans-serif;
+  --body: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* CABEÇALHO */
+
+header {
+  border-bottom: 1px solid var(--line);
+}
+
+header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.logo {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--orange-text);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+/* DESTAQUE */
+
+.hero {
+  padding: 88px 0 72px;
+}
+
+.hero .wrap {
+  border-left: 10px solid var(--orange);
+  padding-left: 28px;
+  margin-left: max(24px, calc((100vw - 960px) / 2));
+  max-width: 760px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  line-height: 1.04;
+}
+
+.hero p {
+  margin-top: 20px;
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 8px;
+  background: var(--orange);
+  color: var(--on-orange);
+  font-weight: 700;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.btn:hover {
+  background: var(--orange-hover);
+}
+
+.hero .btn {
+  margin-top: 30px;
+}
+
+/* APLICATIVOS */
+
+section {
+  padding: 56px 0;
+}
+
+h2 {
+  font-family: var(--display);
+  font-size: 1.9rem;
+}
+
+.lead {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.apps {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.app {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--orange);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+}
+
+.app p {
+  color: var(--muted);
+  font-size: .97rem;
+}
+
+.app .btn {
+  text-align: center;
+  margin-top: auto;
+}
+
+.app-version {
+  color: var(--orange-text);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.app.soon {
+  border-style: dashed;
+  background: transparent;
+  justify-content: center;
+  text-align: center;
+  min-height: 280px;
+}
+
+/* SOBRE */
+
+.about {
+  border-top: 1px solid var(--line);
+}
+
+.about p {
+  margin-top: 12px;
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+/* RODAPÉ */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero .wrap {
+    border-left-width: 8px;
+    padding-left: 18px;
+    margin-left: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">MyLife<span>NWK</span></a>
+
+    <nav>
+      <a href="#aplicativos">Aplicativos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Tecnologia para facilitar sua vida.</h1>
+
+    <p>
+      Conheça os aplicativos da MyLifeNWK.
+      Soluções práticas e ferramentas desenvolvidas
+      para ajudar você no dia a dia.
+    </p>
+
+    <a class="btn" href="#aplicativos">Explorar aplicativos</a>
+  </div>
+</section>
+
+<section id="aplicativos">
+  <div class="wrap">
+
+    <h2>Nossos aplicativos</h2>
+    <p class="lead">Conheça nossas ferramentas e escolha a sua.</p>
+
+    <div class="apps">
+
+      <!-- =================================================
+           APLICATIVO 1
+           EDITE AS INFORMAÇÕES ABAIXO
+      ================================================== -->
+
+      <article class="app">
+
+        <div class="app-icon">
+          <!-- COLOQUE AQUI O CAMINHO DA LOGO -->
+          <img src="images/icon.svg" alt="Logo MyCar">
+        </div>
+
+        <!-- NOME DO APLICATIVO -->
+        <h3>MyCar</h3>
+
+        <!-- VERSÃO -->
+        <span class="app-version">Versão 1.0</span>
+
+        <!-- DESCRIÇÃO DO APLICATIVO -->
+        <p>
+          Uma plataforma criada para facilitar a vida
+          dos motoristas, reunindo ferramentas e recursos
+          úteis para o gerenciamento e acompanhamento
+          de informações sobre seus veículos.
+        </p>
+
+        <!-- LINK DO DOWNLOAD -->
+        <a class="btn"
+           href="arquivos/MyCar.apk"
+           download>
+          Baixar aplicativo
+        </a>
+
+      </article>
+
+      <!-- =================================================
+           APLICATIVO 2
+           COPIE ESTE BLOCO PARA ADICIONAR OUTRO APP
+      ================================================== -->
+
+      
+
+      <!-- AVISO DE NOVOS APLICATIVOS -->
+
+      <article class="app soon">
+        <h3>Novidades em breve</h3>
+        <p>
+          Novos aplicativos da MyLifeNWK
+          serão adicionados aqui.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="about">
+  <div class="wrap">
+    <h2>Sobre a MyLifeNWK</h2>
+
+    <p>
+      A MyLifeNWK é uma iniciativa independente dedicada
+      ao desenvolvimento de aplicativos e soluções digitais
+      que buscam facilitar tarefas, otimizar processos
+      e tornar o cotidiano mais prático por meio da tecnologia.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 MyLifeNWK. Todos os direitos reservados.
+  </div>
+</footer>
+
+</body>
+</html>
+
